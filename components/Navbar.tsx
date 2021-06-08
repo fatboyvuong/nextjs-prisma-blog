@@ -1,4 +1,4 @@
-import { Box, HStack, Link } from "@chakra-ui/layout"
+import { Box, Center, HStack, Link } from "@chakra-ui/layout"
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { Button } from "@chakra-ui/button"
 import { useColorMode } from "@chakra-ui/color-mode"
@@ -10,17 +10,19 @@ const Navbar: React.FC<Props> = () => {
     const { colorMode, toggleColorMode } = useColorMode()
 
     return (
-       <HStack>
-           <Link href="/">Home</Link>
-           <Link href="/about">About</Link>
-           <Button onClick={toggleColorMode}>
-                {
-                    colorMode === 'light' ?
-                    <SunIcon /> :
-                    <MoonIcon />
-                }
-           </Button>
-       </HStack>
+        <Center>
+            <HStack w="100vh" padding="4">
+                <Link marginX="4" href="/">Home</Link>
+                <Link marginX="4" href="/about">About</Link>
+                <Button marginX="4" onClick={toggleColorMode}>
+                        {
+                            colorMode === 'light' ?
+                            <SunIcon /> :
+                            <MoonIcon />
+                        }
+                </Button>
+            </HStack>
+        </Center>
     )
 }
 

@@ -58,7 +58,7 @@ const PostDetail: React.FC<PostDetail> = (props) => {
         <Center>
             <Box w="100vh" mb="4">
                 <Heading as="h1" color="salmon" mt="4">{post.title}</Heading>
-                <Text color="gray.700" py="4">{post.excerpt}</Text>
+                <Text fontSize="xl" py="4">{post.excerpt}</Text>
             </Box>
         </Center>
     )
