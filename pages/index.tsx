@@ -114,6 +114,7 @@ const Home: React.FC<HomeProps> = (props: HomeProps) => {
             src={`${coverBaseUrl}/${index * 10}/300/300`}
             width="300"
             height="300"
+            layout="intrinsic"
             alt="blog cover image" />
           <Link key={index} href={`post/${index}`}>
             <Heading as="h4">{post.title}</Heading>
