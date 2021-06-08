@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts, // shorthand of  { posts: posts } in ES6
     },
-    revalidate: 1
+    // revalidate: 1 // enable if we want to re-render page every specific seconds
   }
 }
 
@@ -115,9 +115,11 @@ const Home: React.FC<HomeProps> = (props: HomeProps) => {
             width="300"
             height="300"
             layout="intrinsic"
+            priority
             alt="blog cover image" />
+            {/* priority: consider image as high priority (within viewport) and will be preloaded */}
           <Link key={index} href={`post/${index}`}>
-            <Heading as="h4">{post.title}</Heading>
+            <Heading as="h5">{post.title}</Heading>
           </Link>
           <Text noOfLines={[1, 2, 3]}>
             {post.excerpt}
